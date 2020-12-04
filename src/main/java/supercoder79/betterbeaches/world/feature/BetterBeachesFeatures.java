@@ -27,7 +27,7 @@ public class BetterBeachesFeatures {
         Registry.register(Registry.FEATURE, new Identifier("betterbeaches", "tide_pool"), TIDE_POOL);
 
         FALLEN_LOGS = FALLEN_LOG.configure(DefaultFeatureConfig.INSTANCE).spreadHorizontally().applyChance(2).decorate(Decorator.TOP_SOLID_HEIGHTMAP.configure(DecoratorConfig.DEFAULT));
-        TIDE_POOLS = TIDE_POOL.configure(DefaultFeatureConfig.INSTANCE).spreadHorizontally().applyChance(8).decorate(Decorator.TOP_SOLID_HEIGHTMAP.configure(DecoratorConfig.DEFAULT));
+        TIDE_POOLS = TIDE_POOL.configure(DefaultFeatureConfig.INSTANCE).spreadHorizontally().applyChance(4).decorate(Decorator.TOP_SOLID_HEIGHTMAP.configure(DecoratorConfig.DEFAULT));
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("betterbeaches", "fallen_log"), FALLEN_LOGS);
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("betterbeaches", "tide_pool"), TIDE_POOLS);
