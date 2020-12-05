@@ -40,5 +40,6 @@ public class MixinMinecraftServer {
 
         BetterBeachesFeatures.addFeature(beach, GenerationStep.Feature.VEGETAL_DECORATION, BetterBeachesFeatures.FALLEN_LOGS);
         BetterBeachesFeatures.addFeature(beach, GenerationStep.Feature.LAKES, BetterBeachesFeatures.TIDE_POOLS);
+        BetterBeachesFeatures.addFeature(beach, GenerationStep.Feature.LAKES, BetterBeachesFeatures.STONE_PILES);
     }
 }

@@ -19,18 +19,24 @@ import java.util.function.Supplier;
 public class BetterBeachesFeatures {
     private static Feature<DefaultFeatureConfig> FALLEN_LOG = new FallenLogFeature(DefaultFeatureConfig.CODEC);
     private static Feature<DefaultFeatureConfig> TIDE_POOL = new TidePoolFeature(DefaultFeatureConfig.CODEC);
+    private static Feature<DefaultFeatureConfig> STONE_PILE = new StonePileFeature(DefaultFeatureConfig.CODEC);
+
     public static ConfiguredFeature<?, ?> FALLEN_LOGS;
     public static ConfiguredFeature<?, ?> TIDE_POOLS;
+    public static ConfiguredFeature<?, ?> STONE_PILES;
 
     public static void init() {
         Registry.register(Registry.FEATURE, new Identifier("betterbeaches", "fallen_log"), FALLEN_LOG);
         Registry.register(Registry.FEATURE, new Identifier("betterbeaches", "tide_pool"), TIDE_POOL);
+        Registry.register(Registry.FEATURE, new Identifier("betterbeaches", "stone_pile"), STONE_PILE);
 
         FALLEN_LOGS = FALLEN_LOG.configure(DefaultFeatureConfig.INSTANCE).spreadHorizontally().applyChance(2).decorate(Decorator.TOP_SOLID_HEIGHTMAP.configure(DecoratorConfig.DEFAULT));
         TIDE_POOLS = TIDE_POOL.configure(DefaultFeatureConfig.INSTANCE).spreadHorizontally().applyChance(4).decorate(Decorator.TOP_SOLID_HEIGHTMAP.configure(DecoratorConfig.DEFAULT));
+        STONE_PILES = STONE_PILE.configure(DefaultFeatureConfig.INSTANCE).spreadHorizontally().applyChance(9).decorate(Decorator.TOP_SOLID_HEIGHTMAP.configure(DecoratorConfig.DEFAULT));
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("betterbeaches", "fallen_log"), FALLEN_LOGS);
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("betterbeaches", "tide_pool"), TIDE_POOLS);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("betterbeaches", "stone_pile"), STONE_PILES);
     }
 
     public static void addFeature(Biome biome, GenerationStep.Feature step, ConfiguredFeature<?, ?> feature) {

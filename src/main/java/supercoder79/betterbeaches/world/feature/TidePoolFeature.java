@@ -63,7 +63,7 @@ public class TidePoolFeature extends Feature<DefaultFeatureConfig> {
                             int o = random.nextInt(6);
                             int p = random.nextInt(15);
                             int q = random.nextInt(15);
-                            
+
                             fish.setVariant(n | o << 8 | p << 16 | q << 24);
 
                             fish.refreshPositionAndAngles(local, 0, 0);
